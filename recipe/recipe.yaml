@@ -1,47 +1,90 @@
 context:
-  version: "0.2.3"
+  version: "0.3.0"
 
-package:
+recipe:
   name: twobitreader-rs
   version: ${{ version }}
 
 source:
   url: https://pypi.org/packages/source/t/twobitreader-rs/twobitreader_rs-${{ version }}.tar.gz
-  sha256: 2f989a1378fb0f57be3b208c92d32810eda3728301b8e7c7e130374444b0ecd7
+  sha256: fc3ca63f9cc41d970dad00c583153092f68390c6b8de97f8073501c2d167166d
 
 build:
   number: 0
-  skip:
-    - match(python, "<3.9")
 
-requirements:
-  build:
-    # The Rust toolchain links libgcc_s for unwinding; the C compiler's run-export is what
-    # puts libgcc into `run` and satisfies conda-build's overlinking check.
-    - ${{ compiler('c') }}
-    - ${{ compiler('rust') }}
-    - ${{ stdlib('c') }}
-    - cargo-bundle-licenses
-    - if: build_platform != target_platform
-      then:
+outputs:
+  # The Python package.
+  - package:
+      name: twobitreader-rs
+      version: ${{ version }}
+
+    build:
+      skip:
+        - match(python, "<3.10")
+      script:
+        file: build-python.${{ 'bat' if win else 'sh' }}
+
+    requirements:
+      build:
+        # The Rust toolchain links libgcc_s for unwinding; the C compiler's run-export is what
+        # puts libgcc into `run` and satisfies conda-build's overlinking check.
+        - ${{ compiler('c') }}
+        - ${{ compiler('rust') }}
+        - ${{ stdlib('c') }}
+        - cargo-bundle-licenses
+        - if: build_platform != target_platform
+          then:
+            - python
+            - cross-python_${{ target_platform }}
+            - maturin >=1.15,<2.0
+      host:
         - python
-        - cross-python_${{ target_platform }}
+        - pip
         - maturin >=1.15,<2.0
-  host:
-    - python
-    - pip
-    - maturin >=1.15,<2.0
-  run:
-    - python
+      run:
+        - python
 
-tests:
-  - python:
-      imports:
-        - twobitreader_rs
-      pip_check: true
-  - script:
-      - python -c "from twobitreader_rs import reverse_complement; assert reverse_complement('ACGTN') == 'NACGT'"
-      - python -c "from twobitreader_rs import TwobitReader; assert hasattr(TwobitReader, 'get')"
+    tests:
+      - python:
+          imports:
+            - twobitreader_rs
+          pip_check: true
+      - script:
+          - python -c "from twobitreader_rs import reverse_complement; assert reverse_complement('ACGTN') == 'NACGT'"
+          - python -c "from twobitreader_rs import TwobitReader; assert hasattr(TwobitReader, 'get')"
+
+    about:
+      summary: Fast DNA sequence extraction from 2bit files
+      description: |
+        Python bindings for the twobitreader Rust crate. Reads the UCSC 2bit genome format
+        through a memory map, with batched extraction, exon concatenation, reverse complement,
+        and prefetching for files not yet in the page cache.
+
+  # The `twobitreader` command, built from the same source with the crate's `cli` feature.
+  - package:
+      name: twobitreader-cli
+      version: ${{ version }}
+
+    build:
+      script:
+        file: build-cli.${{ 'bat' if win else 'sh' }}
+
+    requirements:
+      build:
+        - ${{ compiler('c') }}
+        - ${{ compiler('rust') }}
+        - ${{ stdlib('c') }}
+        - cargo-bundle-licenses
+
+    tests:
+      - script:
+          - twobitreader -help
+
+    about:
+      summary: Command-line tool for extracting DNA from 2bit files, compatible with twoBitToFa
+      description: |
+        The `twobitreader` command, a drop-in replacement for the core features of UCSC twoBitToFa
+        built on the twobitreader Rust crate, with an optional multi-threaded mode (`-threads=N`).
 
 about:
   homepage: https://github.com/andrewdelong/twobitreader-rust
