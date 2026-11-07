@@ -1,7 +1,27 @@
-About twobitreader-rs-feedstock
-===============================
+About twobitreader-cli-feedstock
+================================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/twobitreader-rs-feedstock/blob/main/LICENSE.txt)
+
+
+About twobitreader-cli
+----------------------
+
+Home: https://github.com/andrewdelong/twobitreader-rust
+
+Package license: MIT OR Apache-2.0
+
+Summary: Command-line tool for extracting DNA from 2bit files, compatible with twoBitToFa
+
+Development: https://github.com/andrewdelong/twobitreader-rust
+
+Documentation: https://docs.rs/twobitreader
+
+The `twobitreader` command, a drop-in replacement for the core features of UCSC twoBitToFa
+built on the twobitreader Rust crate, with an optional multi-threaded mode (`-threads=N`).
+
+About twobitreader-rs
+---------------------
 
 Home: https://github.com/andrewdelong/twobitreader-rust
 
@@ -42,73 +62,17 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>osx_64_python3.11.____cpython</td>
+              <td>osx_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=29969&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/twobitreader-rs-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.11.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/twobitreader-rs-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_python3.12.____cpython</td>
+              <td>osx_arm64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=29969&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/twobitreader-rs-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.12.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_python3.13.____cp313</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=29969&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/twobitreader-rs-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.13.____cp313" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_python3.14.____cp314</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=29969&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/twobitreader-rs-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.14.____cp314" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_python3.15.____cp315</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=29969&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/twobitreader-rs-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.15.____cp315" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_python3.11.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=29969&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/twobitreader-rs-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_python3.11.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_python3.12.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=29969&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/twobitreader-rs-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_python3.12.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_python3.13.____cp313</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=29969&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/twobitreader-rs-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_python3.13.____cp313" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_python3.14.____cp314</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=29969&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/twobitreader-rs-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_python3.14.____cp314" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_python3.15.____cp315</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=29969&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/twobitreader-rs-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_python3.15.____cp315" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/twobitreader-rs-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
                 </a>
               </td>
             </tr>
@@ -124,12 +88,13 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-twobitreader--cli-green.svg)](https://anaconda.org/conda-forge/twobitreader-cli) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/twobitreader-cli.svg)](https://anaconda.org/conda-forge/twobitreader-cli) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/twobitreader-cli.svg)](https://anaconda.org/conda-forge/twobitreader-cli) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/twobitreader-cli.svg)](https://anaconda.org/conda-forge/twobitreader-cli) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-twobitreader--rs-green.svg)](https://anaconda.org/conda-forge/twobitreader-rs) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/twobitreader-rs.svg)](https://anaconda.org/conda-forge/twobitreader-rs) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/twobitreader-rs.svg)](https://anaconda.org/conda-forge/twobitreader-rs) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/twobitreader-rs.svg)](https://anaconda.org/conda-forge/twobitreader-rs) |
 
-Installing twobitreader-rs
-==========================
+Installing twobitreader-cli
+===========================
 
-Installing `twobitreader-rs` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `twobitreader-cli` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
@@ -143,7 +108,7 @@ How to use
 <summary>With conda</summary>
 
 ```
-conda install twobitreader-rs
+conda install twobitreader-cli twobitreader-rs
 ```
 
 </details>
@@ -152,7 +117,7 @@ conda install twobitreader-rs
 <summary>With mamba</summary>
 
 ```
-mamba install twobitreader-rs
+mamba install twobitreader-cli twobitreader-rs
 ```
 
 </details>
@@ -162,9 +127,9 @@ mamba install twobitreader-rs
 
 ```
 # for adding to your local project
-pixi add twobitreader-rs
+pixi add twobitreader-cli twobitreader-rs
 # for installing globally
-pixi global install twobitreader-rs
+pixi global install twobitreader-cli twobitreader-rs
 ```
 
 </details>
@@ -172,13 +137,13 @@ pixi global install twobitreader-rs
 Search package versions
 -----------------------
 
-It is possible to list all of the versions of `twobitreader-rs` available on your platform:
+It is possible to list all of the versions of `twobitreader-cli` available on your platform:
 
 <details>
 <summary>With conda</summary>
 
 ```
-conda search twobitreader-rs --channel conda-forge
+conda search twobitreader-cli --channel conda-forge
 ```
 
 </details>
@@ -187,7 +152,7 @@ conda search twobitreader-rs --channel conda-forge
 <summary>With mamba</summary>
 
 ```
-mamba search twobitreader-rs --channel conda-forge
+mamba search twobitreader-cli --channel conda-forge
 ```
 
 </details>
@@ -196,7 +161,7 @@ mamba search twobitreader-rs --channel conda-forge
 <summary>With pixi</summary>
 
 ```
-pixi search twobitreader-rs --channel conda-forge
+pixi search twobitreader-cli --channel conda-forge
 ```
 
 </details>
@@ -206,13 +171,13 @@ pixi search twobitreader-rs --channel conda-forge
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search twobitreader-rs --channel conda-forge
+mamba repoquery search twobitreader-cli --channel conda-forge
 
-# List packages depending on `twobitreader-rs`:
-mamba repoquery whoneeds twobitreader-rs --channel conda-forge
+# List packages depending on `twobitreader-cli`:
+mamba repoquery whoneeds twobitreader-cli --channel conda-forge
 
-# List dependencies of `twobitreader-rs`:
-mamba repoquery depends twobitreader-rs --channel conda-forge
+# List dependencies of `twobitreader-cli`:
+mamba repoquery depends twobitreader-cli --channel conda-forge
 ```
 
 </details>
@@ -258,17 +223,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating twobitreader-rs-feedstock
-==================================
+Updating twobitreader-cli-feedstock
+===================================
 
-If you would like to improve the twobitreader-rs recipe or build a new
+If you would like to improve the twobitreader-cli recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/twobitreader-rs-feedstock are
+Note that all branches in the conda-forge/twobitreader-cli-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks, and branches in the main repository should only be used to
 build distinct package versions.
